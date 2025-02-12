@@ -1,0 +1,24 @@
+name : complete github actions with commands
+
+#Events that trigger the workflow 
+
+on:
+  push:
+   branches:
+      - main
+  pull_request:
+   branches:
+      - main 
+  schedule:
+    - cron: '0  0 * * *' # you can use cron to tigger the workflow  github console we can integrat
+#environment varibales avaibles thrightout the workflow
+
+env:
+  GLOBAL_VAR: "value"
+  NODE_ENV: "production"
+
+jobs:
+  build_and_depoly:
+    runs-on: ubuntu-latest
+  
+          
